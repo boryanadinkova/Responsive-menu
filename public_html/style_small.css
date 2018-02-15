@@ -1,0 +1,205 @@
+* {
+		padding:0;
+		margin:0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+}
+
+.editable_box {
+width:100%;
+max-width: 499px;
+min-width: 300px;
+background-color: #fff;
+margin: auto;
+}
+
+
+
+#editable_box_widget_edit {
+
+}
+
+
+.editable_group {
+	width:100%;
+	background-color: #cfd3da;
+	border: 1px solid #cfd3da;
+	border-radius: 3px;
+	margin-bottom: 3px;
+	}
+
+
+
+h3{
+	width:100%;
+	height: 30px;
+	margin: auto;
+	border-radius: 3px 3px 0px 0px;
+	padding-left: 5px;
+	padding-top: 5px;
+	font-family: Arial;
+	font-size: 14px;
+	color: #333333;
+	
+	
+}
+
+.editable {
+	background-color:#fff;
+	padding: 5px;
+	
+			
+} 
+
+div.editable > label{
+	
+	font-family: Arial;
+	font-size: 14px;
+	color: #333333;
+	padding-bottom: 10px;
+	margin-left: 3px;
+	margin-right: 3px;
+	margin-bottom: 3px;
+		
+}
+
+.input_field_data_source{
+	display:flex;
+	height: 30px;
+	width:auto;
+	margin:3px 2px 3px 2px;
+	vertical-align:middle;
+			
+}
+
+#datasource {
+	width:100%;
+	height: 30px;
+	line-height: 30px;
+	border-radius:5px 0px 0px 5px; 
+	border: 2px solid #cfd3da;
+	font-size: 13px;
+	font-family: Arial;
+	color:#8e8a8a;
+	
+}
+
+.search {
+	width:available;
+	height:30px;
+	line-height: 40px;
+	object-fit:contain;
+	display:inline-block;	
+	vertical-align:middle;	
+	margin-left:0;
+	padding-left: 7px;
+	padding-right: 7px; 
+	background-color: #cfd3da;
+	border-radius: 0px 5px 5px 0px; 
+	border-left:0;
+	cursor: pointer;
+}	
+
+/**end of Data Source Section**/
+
+/**Setup section**/
+
+
+.input_field_input, .input_field_select,
+.input_field_widgetwidth{
+	display:flex;
+	width:auto;
+	margin-top: 3px;
+	margin-left:3px;
+	margin-right: 3px;
+	
+}
+
+select {
+	width:100%;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background: #cfd3da url(caret-down.png) no-repeat 99% 50%;
+	cursor: pointer;
+}
+input[type="text"], select {
+	
+	height:34px;
+	padding:4px;
+	vertical-align:middle;
+	background-color: #fff;
+	border: 2px solid #cfd3da;
+	font-family:Arial;
+	font-size: 14px;
+	color: #8e8a8a;
+	border-radius: 3px;
+	
+	
+}
+
+.editable input {
+	width:100%;
+	}
+
+.editable button {
+
+ 	background-color: #58647c;
+
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#69758d), to(#58647c));
+
+ 	background-image: -webkit-linear-gradient(top, #69758d, #58647c);
+ 	
+	background-image: -moz-linear-gradient(top, #69758d, #58647c);
+ 	
+	background-image: -ms-linear-gradient(top, #69758d, #58647c);
+ 	
+	background-image: -o-linear-gradient(top, #69758d, #58647c);
+ 	
+	background-image: linear-gradient(to bottom, #69758d, #58647c);
+		
+	filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#69758d, endColorstr=#58647c);
+	
+	color:white;
+	
+	display:inline-block;
+	
+	vertical-align:middle;
+	
+	line-height:16px;
+	
+	font-size:13px;
+	
+	font-weight: normal;
+	
+	text-decoration: none;
+	
+	padding: 5px 25px;
+	
+	border:0;
+	
+	margin:0 2px;
+	
+	-webkit-border-radius: 3px;
+	
+	-moz-border-radius: 3px;
+	
+	border-radius: 3px;
+	
+	cursor:pointer;
+	
+	white-space: nowrap;
+
+}
+
+.editable button:hover  {
+	
+	background: #69758d;
+
+
+}
+
+ 
+select[name="https"], select[name="limit"]{
+	margin-bottom: 3px;
+}

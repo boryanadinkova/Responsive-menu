@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Front-end Test</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" media="only screen and (min-width:500px)" href="style_big.css" />
+		<link rel="stylesheet" type="text/css" media="only screen and (max-width:499px)" href="style_small.css" />
+	</head>
+	<body>
+
+<!-- Edit this html file as needed. -->
+
+<div class="editable_box" id="editable_box_widget_edit">
+	<div class="editable_group ">
+		<h3> 1 Start your widget</h3>
+		
+		<div class="editable" field="element">
+			<label>Data Source:</label>
+				<div class='input_field_data_source'>
+				<input type="text" name="datasource" placeholder="Search a page from where to grab a data" id="datasource"></input>
+				<span class='search'><img src='search.png' alt='magnifier'></img></span>
+			</div>			
+			
+		</div>
+	
+	</div>
+	<div class="editable_group">
+		<h3>2 Setup your widget</h3>
+		
+		<div class="editable" field="Name">
+			<label>Widget title:</label>
+			<div class="input_field_input">			
+			<input type="text" name="Name" value="My super title Leaderboard ACF"/>	
+			<button>Save</button>
+			</div>
+		</div>
+		
+		<div class="editable" field="ranking_type">
+			<label>Rank by:</label>
+			<div class="input_field_select">
+				<select name="ranking_type"><option value="EARNINGS">Earnings</option><option value="ITM">Number of ITM</option><option value="WIN">Number of 1st place</option></select>
+			</div>
+		</div>
+
+		<div class="editable" field="period">
+			<label>Filter by time:</label>
+			<div class="input_field_select">
+				<select name="period"><option value="ALL">All time</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option><option>2010</option></select>
+			</div>
+			
+		</div>
+
+		<div class="editable" field="limit">
+			<label>List size:</label>
+			<div class="input_field_select">
+				<select name="limit"><option value="1">1</option><option value="5">5</option><option value="10">10</option><option value="25">25</option><option value="50">50</option></select>
+			</div>
+			
+		</div>
+	
+	</div>
+	
+	<div class="editable_group line_of_2">
+		
+		<h3>3 Customize your widget</h3>
+		
+		<div class="grid-container">
+			
+			<div class="editable grid-item" field="lang">
+			<label>Language:</label>
+			<div class="input_field_select">
+				<select name="lang"><option value="en">English</option><option value="fr">Français</option></select>
+		</div>
+		</div>
+			
+
+		<div class="editable grid-item" field="colors">
+			<label>Color Scheme:</label>
+			<div class="input_field_select">
+				<select name="colors"><option value="0">Light</option><option value="1">Dark</option><option value="2">Darker</option></select>
+			</div>
+			
+		</div>
+
+		<div class="editable grid-item" field="size">
+			<label>Widget width:</label><br/>
+			<div class="input_field_widgetwidth">
+			<input type="text" name="size" value="400"/>
+			<button>Save</button>
+		</div>
+</div>
+		<div class="editable grid-item" field="https">
+			<label>Link in HTTPS</label>
+			<div class="input_field_select">
+				<select name="https"><option value="0">No</option><option value="1">Yes</option></select>
+			</div>
+			
+		</div>
+			
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+// if you have time for some JS, do it here.
+var saving = {
+	'widgetTitle': $('[name="Name"]'),
+	'rankType':$('[name="ranking_type"]'),
+	'timeLine':$('[name="period"]'),
+	'listSize':$('[name="limit"]'),
+	'language':$('[name="lang"]'),
+	'colorScheme':$('[name="colors"]'),
+	'widgetWidth':$('[name="size"]'),
+	'linkHttps':$('[name="https"]')
+};
+$(function() {
+	$('.editable_box button').click(function() {
+		// show it's saving
+		$(this).after( imgs.load );
+		// save
+		saving['widgetTitle'] = $('[name="Name"]').val();		
+		saving['widgetWidth'] = $('[name="size"]').val();		
+		console.log(saving);
+		// emulates a slow save
+		setTimeout(function() {
+			imgs.load.replaceWith( imgs.saved );
+		}, 1500);
+		setTimeout(function () {$(imgs.saved).fadeOut("slow");},2000);
+	});
+	
+	$('.editable_box select').change(function() {
+		$(this).after( imgs.load );
+		saving['rankType'] = $('[name="ranking_type"]').val();
+		saving['timeLine'] = $('[name="period"]').val();
+		saving['listSize'] = $('[name="limit"]').val();
+		saving['language'] = $('[name="lang"]').val();
+		saving['colorScheme'] = $('[name="colors"]').val();
+		saving['linkHttps'] = $('[name="https"]').val();
+		console.log(saving);
+		
+		setTimeout(function () {(imgs.load).replaceWith(imgs.saved);},2000);
+		setTimeout(function () {$(imgs.saved).fadeOut("slow");},2000);
+		
+	});
+	var imgs = {
+		'load': $('<img src="loading.gif" />'),
+		'saved': $('<img src="saved.png" />')
+	};
+});
+</script>
+
+</body>
+</html>
